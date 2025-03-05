@@ -1,4 +1,24 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+
+// Metadata configuration
+export const metadata: Metadata = {
+  title: "My Warpcast Frame",
+  description: "A sample Warpcast frame",
+  openGraph: {
+    title: "My Warpcast Frame",
+    description: "Interactive frame for Warpcast",
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL}/og-image.png`],
+  },
+  other: {
+    "fc:frame": "vNext",
+    "fc:frame:image": `${process.env.NEXT_PUBLIC_SITE_URL}/og-image.png`,
+    "fc:frame:post_url": `${process.env.NEXT_PUBLIC_SITE_URL}/api/frame`,
+    "fc:frame:input:text": "Enter your message",
+    "fc:frame:button:1": "First Button",
+    "fc:frame:button:2": "Second Button",
+  },
+};
 
 export default function Home() {
   return (
